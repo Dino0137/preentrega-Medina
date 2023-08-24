@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAFETERIAS</title>
+</head>
+<body>
+    <h1> Pagina de cafeterias </h1>
+    <ul> 
+        {% for cafeteria in cafeteria %}
+    
+            <li> {{ cafeteria.nombre}} - {{cafeteria.instagram }} </li>
+    
+        {% endfor %}
+</body>
+</html>

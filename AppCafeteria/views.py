@@ -21,3 +21,16 @@ def listar_cafeterias(request):
     for cafeteria in cafeterias:
         respuesta+=f"{cafeteria.nombre} - {cafeteria.instagram}"
     return HttpResponse(respuesta) 
+
+def inicio(request):
+    return render (request, "AppCafeteria/inicio.html")
+
+def cafeterias(request):
+    cafeterias=Cafeteria.objects.all()
+    return render (request, "AppCafeteria/cafeterias.html", {"cafeteria":cafeterias})
+
+def baristas(request):
+    return render (request, "AppCafeteria/baristas.html")
+
+def comunidad (request):
+    return render (request, "AppCafeteria/comunidad.html")
