@@ -6,7 +6,7 @@ urlpatterns = [
         path("cafeterias/", cafeterias, name="cafeterias"),
         path("baristas/", baristas, name= "baristas"),
         path("comunidad/", comunidad, name="comunidad"),
-        path("busquedacafeteria/", busquedaCafeteria, name= "busquedacafeteria"),
+        path("busquedaCafeteria/", busquedaCafeteria, name= "busquedaCafeteria"),
         path("buscar/", buscar, name="buscar"), 
 
 ]
