@@ -1,0 +1,24 @@
+{% extends "AppCafeteria/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %} RESULTADO DE BUSQUEDA CAFETERIAS{% endblock %}
+{% block color_boton_inicio %} active {% endblock %}
+
+{% block contenido %}
+
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2>RESULTADO DE BUSQUEDA</h2>
+                <p class="lead"> {% for cafeteria in cafeterias %}</p>
+                <p class="lead">    {{ cafeteria.nombre }} - {{ cafeteria.instagram }} </p>
+                <p class="lead"> {% endfor %}</p>
+                
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

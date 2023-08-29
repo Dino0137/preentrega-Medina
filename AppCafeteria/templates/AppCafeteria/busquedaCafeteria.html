@@ -1,0 +1,37 @@
+{% extends "AppCafeteria/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %} COMUNIDAD CAFETERA {% endblock %}
+{% block color_boton_inicio %} active {% endblock %}
+
+{% block contenido %}
+
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2>Buscar Cafeteria</h2>
+                <p class="lead">Aquí podes encontrar la cafeteria que mas te guste.</p>
+
+                <form action="{% url 'buscar' %}" method="GET">
+
+                    <input type="text" name="nombre" id="nombre" placeholder="INGERSE CAFETERIA">
+
+                    <input type="submit" value="BUSCAR CAFETERIA">
+
+
+
+
+                </form>
+
+                <h2> {{ mensaje }}</h2>
+
+                
+               
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

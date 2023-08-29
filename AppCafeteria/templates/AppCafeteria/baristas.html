@@ -1,11 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BARISTAS</title>
-</head>
-<body>
-    <h1> Pagina de baristas </h1>
-</body>
-</html>
+{% extends "AppCafeteria/padre.html" %}
+
+{% load static %}
+
+{% block titulo %} BARISTAS {% endblock %}
+{% block color_boton_baristas %} active {% endblock %}
+
+
+{% block contenido %}
+
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2> BARISTAS TUCUMANOS</h2>
+                <p class="lead">Somos pocos, pero que nos encuentren UNIDOS!.</p>
+                <p class="mb-0">Si sos barista, estas buscando trabajo, o simplemente queres compartir con otros baristas, Registrate aquí</p>
+
+                <form action="{% url 'baristas' %}" method="post"> {% csrf_token %} 
+                        
+                    {{formulario.as_p}}
+
+                <input type="submit" value="REGISTRAR BARISTA">
+
+            </form>
+            <h3> {{ mensaje }}</h3>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

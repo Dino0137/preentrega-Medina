@@ -1,17 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAFETERIAS</title>
-</head>
-<body>
-    <h1> Pagina de cafeterias </h1>
-    <ul> 
-        {% for cafeteria in cafeteria %}
-    
-            <li> {{ cafeteria.nombre}} - {{cafeteria.instagram }} </li>
-    
-        {% endfor %}
-</body>
-</html>
+{% extends "AppCafeteria/padre.html" %}
+
+{% load static %}
+
+{% block titulo %} CAFETERIAS {% endblock %}
+{% block color_boton_cafeterias %} active {% endblock %}
+
+
+{% block contenido %}
+
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2>CAFETERIAS DE ESPECIALIDAD EN TUCUMAN </h2>
+                <p class="lead">Aqui encontraras todas las cafeterias de especialidad de Tucumán</p>
+                <p class="mb-0">Si sos dueño de una cafetería de especialidad podes registrarte aquí </p>
+
+                <form action="{% url 'cafeterias' %}" method="post"> {% csrf_token %} 
+                        
+                        {{formulario.as_p}}
+
+                    <input type="submit" value="GUARDAR CAFETERIA">
+
+                </form>
+                <h3> {{ mensaje }}</h3>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
